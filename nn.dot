@@ -1,7 +1,7 @@
 include(defs.m4)
 
 digraph nn {
-	# m4 nn.dot.m4 
+	# See http://www.asimovinstitute.org/neural-network-zoo/
 
 	START("Deep Learning", q_enough_data)
 

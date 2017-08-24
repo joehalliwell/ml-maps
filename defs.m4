@@ -7,7 +7,7 @@ define(START,`
 	nodesep=1.0
 	node [shape=box,style="filled,bold",colorscheme=oranges4,fillcolor=2,color=3,fontname=helvetica]
 	edge [style="bold",colorscheme=oranges4,color=2,fontname=helvetica]
-	graph [label=$1,fontsize=24,labelloc=top,labeljust=left,fontname=helvetica]
+	graph [label=$1,fontsize=24,labelloc=top,labeljust=left,overlap=false,fontname=helvetica]
 
 	start [label="Start"]
 	start -> $2
