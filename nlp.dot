@@ -1,0 +1,63 @@
+include(defs.m4)
+
+digraph nlp {
+
+	START("Natural Language Processing", q_enough_data)
+    
+    QUESTION(q_enough_data, ">50 documents?")
+    q_enough_data -> q_plain_text [YES]
+    q_enough_data -> s_more_docs [NO]
+
+	QUESTION(q_plain_text, "Plain text?")
+    q_plain_text -> q_categorising [YES]
+    q_plain_text -> q_audio [NO]
+
+    QUESTION(q_audio,"Audio?")
+    q_audio -> s_speech [YES]
+    q_audio -> q_image [NO]
+
+    QUESTION(q_image,"Image?")
+    q_image -> s_ocr [YES]
+    q_image -> s_scrap [NO]
+
+    QUESTION(q_categorising,"Categorising?")
+    q_categorising -> q_supervised [YES]
+    q_categorising -> q_extracting [NO]
+
+    QUESTION(q_supervised,"Known categories?")
+    q_supervised -> s_clustering [NO]
+    q_supervised -> s_classification [YES] 
+
+    QUESTION(q_extracting,"Extracting information?")
+    q_extracting -> q_structured [YES]
+    q_extracting -> q_searching [NO]
+
+    QUESTION(q_searching,"Searching for relevant doc?")
+    q_searching -> s_search [YES]
+    q_searching -> s_misc [NO]
+
+    QUESTION(q_structured,"Structured information?")
+    q_structured -> q_summarising [NO]
+    q_structured -> q_parsing [YES]
+
+    QUESTION(q_summarising,"Summarising?")
+    q_summarising -> s_summarising [YES]
+    q_summarising -> s_translating [NO]
+
+    QUESTION(q_parsing,"Full parse?")
+    q_parsing -> s_parsing [YES]
+    q_parsing -> s_extraction [NO]
+
+    s_more_docs [label="Get more docs"]
+    s_speech [label="See speech recognition"]
+    s_ocr [label="See OCR"]
+    s_scrap [label="See scraping"]
+    SOLUTION(s_clustering,"{LDA | Vectorize + cluster}")
+    SOLUTION(s_classification,"{Naive Bayes | Vectorize + classify}")
+    SOLUTION(s_search,"{DocRank | Vectorize + recommend}")
+    s_misc [label="Ask an expert"]
+    SOLUTION(s_summarising,"{TextRank | Pointer Nets}")
+    SOLUTION(s_translating,"{Neural Machine Translation}")
+    SOLUTION(s_parsing,"{Parsing | MaxEnt | Head phrase structured grammar}")
+    SOLUTION(s_extraction,"{Named Entity Recognition | CRF | Rules-based}")
+}

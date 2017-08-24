@@ -1,0 +1,34 @@
+include(defs.m4)
+
+digraph nn {
+	# m4 nn.dot.m4 
+
+	START("Deep Learning", q_enough_data)
+
+	QUESTION(q_enough_data,">1000 samples?")
+	q_enough_data -> q_supervised [YES]
+	q_enough_data -> s_more_data [NO]
+
+	QUESTION(q_supervised,"Training data?")
+	q_supervised -> s_unsupervised [NO]
+	q_supervised -> q_categorical [YES]
+
+	QUESTION(q_categorical,"Predicting category?")
+	q_categorical -> s_generic [NO]
+	q_categorical -> q_sequence [YES]
+
+	QUESTION(q_sequence,"Sequence input?")
+	q_sequence -> s_rnn [YES]
+	q_sequence -> q_image [NO]
+
+	QUESTION(q_image,"Image input?")
+	q_image -> s_cnn [YES]
+	q_image -> s_softmax [NO]
+
+	s_more_data [label="Get more data"]
+	SOLUTION(s_unsupervised,"Generative Adversarial Net")
+	SOLUTION(s_cnn,"Convolutional NN")
+	SOLUTION(s_generic,"Deep NN + sum")
+	SOLUTION(s_softmax,"Deep NN + softmax")
+	SOLUTION(s_rnn,"Recurrent NN")
+}
