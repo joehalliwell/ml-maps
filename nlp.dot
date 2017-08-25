@@ -52,12 +52,14 @@ digraph nlp {
     s_speech [label="See speech recognition"]
     s_ocr [label="See OCR"]
     s_scraping [label="See scraping"]
-    SOLUTION(s_clustering,<{<i>Topic extraction</i> | LDA | Vectorize + cluster}>)
-    SOLUTION(s_classification,<{<i>Document classification</i> | Naive Bayes | Vectorize + classify}>)
-    SOLUTION(s_search,<{<i>Information retrieval</i> | DocRank | Vectorize + recommend}>)
     s_misc [label="Ask an expert"]
-    SOLUTION(s_summarising,<{<i>Summarisation</i> | TextRank | Pointer Nets}>)
-    SOLUTION(s_translating,<{<i>Machine Translation</i> | Neural MT | Statistical MT}>)
-    SOLUTION(s_parsing,<{<i>Parsing</i> | MaxEnt parsing| Head Phrase Structured Grammar}>)
-    SOLUTION(s_extraction,<{<i>Information extraction</i> | Regex and rules | Named Entity Recognition | Conditional Random Fields}>)
+    
+    SOLUTION(s_clustering, RECORD(Topic extraction, LDA, Vectorize + cluster))
+    SOLUTION(s_classification, RECORD(Document classification, Naive Bayes, Vectorize + classify))
+    SOLUTION(s_search, RECORD(Information retrieval, DocRank, Vectorize + recommend))
+    SOLUTION(s_summarising, RECORD(Summarisation, TextRank, Pointer Nets))
+    SOLUTION(s_translating, RECORD(Machine Translation, Neural MT, Statistical MT))
+    SOLUTION(s_parsing, RECORD(Parsing, MaxEnt parsing, Head Phrase Structured Grammar))
+    SOLUTION(s_extraction, RECORD(Information extraction, Regex and rules, Named Entity Recognition, Conditional Random Fields))
+
 }

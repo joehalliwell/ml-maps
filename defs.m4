@@ -1,5 +1,5 @@
-define(QUESTION,`$1 [label=$2,shape=ellipse,style="filled,bold",colorscheme=greens4]')
-define(SOLUTION,`$1 [label=$2,shape=record,style="filled,bold",colorscheme=blues4]')
+define(QUESTION,`$1 [label=$2,shape="ellipse",style="filled,bold",colorscheme=greens4]')
+define(SOLUTION,`$1 [label=$2,shape="none",style="",colorscheme=blues4]')
 
 define(YES,``label=" YES ",colorscheme=greens4'')
 define(NO,``label=" NO ",colorscheme=reds4'')
@@ -11,8 +11,14 @@ define(START,``
 			<tr><td align="left"><font point-size="36">$1</font></td></tr>
 			<tr><td align="left">Ideas to improve this? @joehalliwell</td></tr>
 		</table>
-	>,labelloc=top,labeljust=left,overlap=false,fontname=helvetica,ratio=1.2]
+	>,labelloc=top,labeljust=left,fontname=helvetica,ratio=1.2]
 
 	start [label=<<B>START</B>>,shape=circle,colorscheme=oranges4]
 	start -> $2
 '')
+
+define(_RECORD,`ifelse(`$1', `', `$1', `<tr><td>$1</td></tr>_RECORD(shift($@))')')
+define(RECORD,`<<table border="1" cellborder="0" cellspacing="0" cellpadding="6" bgcolor="2" color="3">
+	<tr><td bgcolor="3" color="3" border="1" cellpadding="4"><b><i>$1</i></b></td></tr>
+	_RECORD(shift($@))
+</table>>')

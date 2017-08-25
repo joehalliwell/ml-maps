@@ -26,9 +26,9 @@ digraph nn {
 	q_image -> s_softmax [NO]
 
 	s_more_data [label="Get more data"]
-	SOLUTION(s_unsupervised,<{<i>Generative models</i> | Restricted Bolzmann Machine | Generative Adversarial Net}>)
-	SOLUTION(s_generic, <{<i>Function approximation</i>| Deep NN + sum}>)
-	SOLUTION(s_cnn, <{<i>Machine vision</i> | Deep Convolutional NN}>)
-	SOLUTION(s_softmax, <{<i>Generic classification</i> | Deep NN + softmax}>)
-	SOLUTION(s_rnn, <{<i>Sequence classification</i> | Recurrent NN | LSTM}>)
+	SOLUTION(s_unsupervised, RECORD(Generative models, Restricted Bolzmann Machine, Generative Adversarial Net))
+	SOLUTION(s_generic, RECORD(Function approximation, Deep NN + sum))
+	SOLUTION(s_cnn, RECORD(Machine vision, Deep Convolutional NN))
+	SOLUTION(s_softmax, RECORD(Generic classification, Deep NN + softmax))
+	SOLUTION(s_rnn, RECORD(Sequence classification, Recurrent NN, LSTM))
 }
