@@ -2,7 +2,7 @@ include(defs.m4)
 
 digraph nlp {
 
-	START("Natural Language Processing", q_enough_data)
+	START(Natural Language Processing, q_enough_data)
     
     QUESTION(q_enough_data, ">500 documents?")
     q_enough_data -> q_plain_text [YES]

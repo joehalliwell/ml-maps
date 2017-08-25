@@ -3,7 +3,7 @@ include(defs.m4)
 digraph nn {
 	# See http://www.asimovinstitute.org/neural-network-zoo/
 
-	START("Deep Learning", q_enough_data)
+	START(Deep Learning, q_enough_data)
 
 	QUESTION(q_enough_data,">10k samples?")
 	q_enough_data -> q_supervised [YES]
