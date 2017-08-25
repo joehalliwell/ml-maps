@@ -4,7 +4,7 @@ digraph nlp {
 
 	START("Natural Language Processing", q_enough_data)
     
-    QUESTION(q_enough_data, ">50 documents?")
+    QUESTION(q_enough_data, ">500 documents?")
     q_enough_data -> q_plain_text [YES]
     q_enough_data -> s_more_docs [NO]
 
@@ -28,15 +28,15 @@ digraph nlp {
     q_supervised -> s_clustering [NO]
     q_supervised -> s_classification [YES] 
 
-    QUESTION(q_extracting,"Extracting information?")
+    QUESTION(q_extracting,"Extracting info?")
     q_extracting -> q_structured [YES]
     q_extracting -> q_searching [NO]
 
-    QUESTION(q_searching,"Searching for relevant doc?")
+    QUESTION(q_searching,"Searching?")
     q_searching -> s_search [YES]
     q_searching -> s_misc [NO]
 
-    QUESTION(q_structured,"Structured information?")
+    QUESTION(q_structured,"Structured info?")
     q_structured -> q_summarising [NO]
     q_structured -> q_parsing [YES]
 

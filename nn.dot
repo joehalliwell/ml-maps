@@ -5,7 +5,7 @@ digraph nn {
 
 	START("Deep Learning", q_enough_data)
 
-	QUESTION(q_enough_data,">1000 samples?")
+	QUESTION(q_enough_data,">10k samples?")
 	q_enough_data -> q_supervised [YES]
 	q_enough_data -> s_more_data [NO]
 
