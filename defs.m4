@@ -1,14 +1,13 @@
 define(QUESTION,`$1 [label=$2,shape=ellipse,style="filled,bold",colorscheme=greens4]')
 define(SOLUTION,`$1 [label=$2,shape=record,style="filled,bold",colorscheme=blues4]')
 
-define(YES,``label=" YES ",colorscheme=greens4,color=4,fontcolor=4'')
-define(NO,``label=" NO ",colorscheme=reds4,color=4,fontcolor=4'')
+define(YES,``label=" YES ",colorscheme=greens4'')
+define(NO,``label=" NO ",colorscheme=reds4'')
 define(START,``
-	nodesep=1.0
 	node [shape=box,style="filled,bold",colorscheme=oranges4,fillcolor=2,color=3,fontname=helvetica]
-	edge [style="bold",colorscheme=oranges4,color=2,fontname=helvetica]
-	graph [label=$1,fontsize=24,labelloc=top,labeljust=left,overlap=false,fontname=helvetica]
+	edge [style="bold",colorscheme=oranges4,color=3,fontcolor=4,fontname=helvetica]
+	graph [label=$1,fontsize=24,labelloc=top,labeljust=left,overlap=false,fontname=helvetica,ratio=1.2]
 
-	start [label="START",shape=circle,colorscheme=oranges4]
+	start [label=<<B>START</B>>,shape=circle,colorscheme=oranges4]
 	start -> $2
 '')

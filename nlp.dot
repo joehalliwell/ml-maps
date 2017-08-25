@@ -52,12 +52,12 @@ digraph nlp {
     s_speech [label="See speech recognition"]
     s_ocr [label="See OCR"]
     s_scrap [label="See scraping"]
-    SOLUTION(s_clustering,"{LDA | Vectorize + cluster}")
-    SOLUTION(s_classification,"{Naive Bayes | Vectorize + classify}")
-    SOLUTION(s_search,"{DocRank | Vectorize + recommend}")
+    SOLUTION(s_clustering,<{<i>Topic extraction</i> | LDA | Vectorize + cluster}>)
+    SOLUTION(s_classification,<{<i>Document classification</i> | Naive Bayes | Vectorize + classify}>)
+    SOLUTION(s_search,<{<i>Information retrieval</i> | DocRank | Vectorize + recommend}>)
     s_misc [label="Ask an expert"]
-    SOLUTION(s_summarising,"{TextRank | Pointer Nets}")
-    SOLUTION(s_translating,"{Neural Machine Translation}")
-    SOLUTION(s_parsing,"{Parsing | MaxEnt | Head phrase structured grammar}")
-    SOLUTION(s_extraction,"{Named Entity Recognition | CRF | Rules-based}")
+    SOLUTION(s_summarising,<{<i>Summarisation</i> | TextRank | Pointer Nets}>)
+    SOLUTION(s_translating,<{<i>Machine Translation</i> | Neural MT | Statistical MT}>)
+    SOLUTION(s_parsing,<{<i>Parsing</i> | MaxEnt parsing| Head Phrase Structured Grammar}>)
+    SOLUTION(s_extraction,<{<i>Information extraction</i> | Regex and rules | Named Entity Recognition | Conditional Random Fields}>)
 }
