@@ -5,11 +5,11 @@ digraph nn {
 
 	START(Deep Learning, q_enough_data)
 
-	QUESTION(q_enough_data,">10k samples?")
+	QUESTION(q_enough_data,">100k samples?")
 	q_enough_data -> q_supervised [YES]
 	q_enough_data -> s_more_data [NO]
 
-	QUESTION(q_supervised,"Labelled training data?")
+	QUESTION(q_supervised,"Samples have outputs?")
 	q_supervised -> s_unsupervised [NO]
 	q_supervised -> q_categorical [YES]
 
@@ -26,9 +26,9 @@ digraph nn {
 	q_image -> s_softmax [NO]
 
 	s_more_data [label="Get more data"]
-	SOLUTION(s_unsupervised,"{Restricted Bolzmann Machine | Generative Adversarial Net}")
-	SOLUTION(s_cnn,"Convolutional NN")
-	SOLUTION(s_generic,"Deep NN + sum")
-	SOLUTION(s_softmax,"Deep NN + softmax")
-	SOLUTION(s_rnn,"{Recurrent NN | LSTM}")
+	SOLUTION(s_unsupervised,<{<i>Generative models</i> | Restricted Bolzmann Machine | Generative Adversarial Net}>)
+	SOLUTION(s_generic, <{<i>Function approximation</i>| Deep NN + sum}>)
+	SOLUTION(s_cnn, <{<i>Machine vision</i> | Deep Convolutional NN}>)
+	SOLUTION(s_softmax, <{<i>Generic classification</i> | Deep NN + softmax}>)
+	SOLUTION(s_rnn, <{<i>Sequence classification</i> | Recurrent NN | LSTM}>)
 }
